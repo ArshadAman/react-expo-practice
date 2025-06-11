@@ -25,7 +25,7 @@ export default function Signup({ navigation }) {
         <View className="flex-1 justify-center px-6 py-12">
           {/* Header */}
           <View className="items-center mb-8">
-            <Text className="text-3xl font-bold text-gray-900 mb-2">Create Account</Text>
+            <Text className="text-3xl font-bold text-gray-900 mb-2">Join Outgrow to Grow</Text>
             <Text className="text-gray-600 text-center">
               Sign up to get started with your account
             </Text>

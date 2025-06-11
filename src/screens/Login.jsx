@@ -73,7 +73,7 @@ const Login = ({ navigation }) => {
         <View className="flex-1 justify-center px-6 py-12">
           {/* Header */}
           <View className="items-center mb-8">
-            <Text className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</Text>
+            <Text className="text-3xl font-bold text-gray-900 mb-2">Outgrow Login</Text>
             <Text className="text-gray-600 text-center">
               Sign in to your account to continue
             </Text>
