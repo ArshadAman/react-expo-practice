@@ -1,16 +1,15 @@
-{
-  "expo": {
-    "name": "NativeAssignment",
-    "slug": "NativeAssignment",
-    "version": "1.0.0",
+{  "expo": {
+    "name": "Outgrow",
+    "slug": "outgrow-app",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#667eea"
     },
     "ios": {
       "supportsTablet": true
@@ -18,7 +17,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#667eea"
       },
       "edgeToEdgeEnabled": true
     },

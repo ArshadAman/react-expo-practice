@@ -46,6 +46,7 @@ export default function Signup({ navigation }) {
       await signupSchema.validate(formData, { abortEarly: false });
       setErrors({});
     
+      // Simulate signup success (DummyJSON doesn't have signup endpoint)
       console.log('Signup successful with:', formData);
       Alert.alert('Success', 'Account created successfully!', [
         { text: 'OK', onPress: () => navigation.navigate('Login') },
@@ -59,24 +60,28 @@ export default function Signup({ navigation }) {
         });
       }
       setErrors(validationErrors);
-      setIsSubmitting(false);
     }
+    
+    setIsSubmitting(false);
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gradient-to-br from-green-50 to-emerald-100">
+    <SafeAreaView className="flex-1 bg-gray-50">
       <ScrollView className="flex-1" contentContainerStyle={{ flexGrow: 1 }}>
-        <View className="flex-1 justify-center px-6 py-12">
+        <View className="flex-1 justify-center px-6 py-8">
           {/* Header */}
           <View className="items-center mb-8">
-            <Text className="text-3xl font-bold text-gray-900 mb-2">Join Outgrow to Grow</Text>
+            <View className="bg-orange-500 w-20 h-20 rounded-3xl items-center justify-center mb-4">
+              <Text className="text-white text-3xl font-bold">O</Text>
+            </View>
+            <Text className="text-2xl font-bold text-gray-900 mb-2">Start Your Growth</Text>
             <Text className="text-gray-600 text-center">
-              Sign up to get started with your account
+              Join thousands growing every day
             </Text>
           </View>
 
           {/* Signup Form */}
-          <View className="bg-white rounded-3xl shadow-lg p-6 mb-6">
+          <View className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 mb-6">
             {/* Full Name Field */}
             <View className="mb-4">
               <Text className="text-gray-700 font-medium mb-2">Full Name</Text>
@@ -160,8 +165,8 @@ export default function Signup({ navigation }) {
 
             {/* Signup Button */}
             <TouchableOpacity
-              className={`rounded-xl py-4 items-center mb-4 shadow-sm ${
-                isSubmitting ? 'bg-green-400' : 'bg-green-600'
+              className={`rounded-xl py-4 items-center mb-4 ${
+                isSubmitting ? 'bg-orange-400' : 'bg-orange-500'
               }`}
               onPress={handleSignup}
               disabled={isSubmitting}
@@ -169,47 +174,24 @@ export default function Signup({ navigation }) {
             >
               <View className="flex-row items-center">
                 {isSubmitting && (
-                  <ActivityIndicator color="white" size="small" className="mr-2" />
+                  <ActivityIndicator color="white" size="small" style={{ marginRight: 8 }} />
                 )}
                 <Text className="text-white font-semibold text-lg">
-                  {isSubmitting ? 'Creating Account...' : 'Create Account'}
+                  {isSubmitting ? 'Creating Your Path...' : 'Start Growing'}
                 </Text>
               </View>
             </TouchableOpacity>
-
-            {/* Social Signup Section */}
-            <View className="items-center mb-4">
-              <Text className="text-gray-500 mb-4">Or sign up with</Text>
-              <View className="flex-row space-x-4">
-                <TouchableOpacity 
-                  className={`bg-gray-100 rounded-xl p-3 flex-1 items-center mr-2 ${
-                    isSubmitting ? 'opacity-50' : ''
-                  }`}
-                  disabled={isSubmitting}
-                >
-                  <Text className="text-gray-700 font-medium">Google</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                  className={`bg-gray-100 rounded-xl p-3 flex-1 items-center ml-2 ${
-                    isSubmitting ? 'opacity-50' : ''
-                  }`}
-                  disabled={isSubmitting}
-                >
-                  <Text className="text-gray-700 font-medium">Facebook</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
           </View>
 
           {/* Navigate to Login */}
           <View className="flex-row justify-center">
-            <Text className="text-gray-600">Already have an account? </Text>
+            <Text className="text-gray-600">Already growing? </Text>
             <TouchableOpacity 
               onPress={() => navigation?.navigate('Login')}
               disabled={isSubmitting}
             >
-              <Text className={`font-semibold ${isSubmitting ? 'text-gray-400' : 'text-green-600'}`}>
-                Sign In
+              <Text className={`font-semibold ${isSubmitting ? 'text-gray-400' : 'text-orange-600'}`}>
+                Continue Journey
               </Text>
             </TouchableOpacity>
           </View>
